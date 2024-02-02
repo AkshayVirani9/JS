@@ -1,0 +1,213 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #5252522d;
+}
+
+.form-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    margin: 20px;
+}
+
+#create-account-form {
+    color: midnightblue;
+    width: 105vh;
+    height: auto;
+    padding: 25px;
+    text-transform: uppercase;
+    background-color: rgb(241, 222, 199);
+}
+
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    color: #191970
+}
+
+#firstname {
+    width: 70vh;
+    margin-left: 4.5vh;
+}
+
+#middlename {
+    width: 70vh;
+    margin-left: 2vh;
+}
+
+#lastname {
+    width: 70vh;
+    margin-left: 4.5vh;
+}
+
+#email {
+    width: 71vh;
+    margin-left: 8.5vh;
+}
+
+#mobileno {
+    width: 71vh;
+    margin-left: 4vh;
+}
+
+#password {
+    width: 71vh;
+    margin-left: 4vh;
+}
+
+#confirm-password {
+    width: 64.5vh;
+    margin-left: 2vh;
+}
+
+#address {
+    margin-left: 5vh;
+}
+
+#city {
+    margin-left: 2vh;
+    cursor: pointer;
+}
+
+#state {
+    margin-left: 2vh;
+    cursor: pointer;
+}
+
+#pincode {
+    margin-left: 2vh;
+    cursor: pointer;
+}
+
+.both {
+    display: flex;
+}
+
+#datepicker {
+    margin-right: 100px;
+    cursor: pointer;
+}
+
+.city_state {
+    display: flex;
+}
+
+.title {
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.input-group {
+    margin: 15px 0;
+    position: relative;
+
+}
+
+.success i.fa-check {
+    visibility: visible;
+    color: green;
+}
+
+.input-group label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+
+.error input {
+    border: 1px red solid;
+}
+
+.success input {
+    border: 1px green solid;
+}
+
+.input-group i {
+    position: absolute;
+    right: 15px;
+    visibility: hidden;
+}
+
+.input-group p {
+    font-size: 13px;
+    color: red;
+    visibility: hidden;
+}
+
+.error p {
+    visibility: visible;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgb(49, 48, 47);
+    color: wheat;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 15px;
+}
+
+.row {
+    display: flex;
+}
+
+.tenth_row {
+    display: flex;
+}
+
+#education-section {
+    margin: 10px;
+    text-align: -webkit-center;
+    padding: 5px;
+}
+
+#add-education {
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+
+}
+
+#add-education:hover {
+    background-color: rgb(69, 100, 240);
+    color: #ffffff;
+}
+
+.delete-btn {
+    width: 80px;
+    margin-left: 2vh;
+    margin-bottom: 1vh;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.delete-btn:hover {
+    background-color: rgb(250, 41, 41);
+    color: #ffffff;
+}
+
+.btn:hover {
+    background-color: #092a41;
+    cursor: pointer;
+    color: #ffffff;
+}
+#create-account-form{
+    position: relative;
+    height:auto;
+    width:auto ;
+}

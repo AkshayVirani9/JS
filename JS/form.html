@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form validation</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+</head>
+
+<body>
+    <div class="form container">
+        <form id="create-account-form" name="form" onsubmit="return validateForm(event)">
+            <div class="title">
+                <h1>Registration Form</h1>
+            </div>
+
+            <div class="input-group">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" placeholder="Please Enter Your First Name" name="firstname"
+                    autocomplete="off" />
+                <i class="fa-solid fa-check"></i>
+                <p class="error-message"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="middlename">Middle Name</label>
+                <input type="text" id="middlename" placeholder="Please Enter Your Middle Name" name="middlename"
+                    autocomplete="off" />
+                <i class="fa-solid fa-check"></i>
+                <p class="error-message"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" placeholder="Please Enter Your Last Name" name="lastname"
+                    autocomplete="off" />
+                <i class="fa-solid fa-check"></i>
+                <p class="error-message"></p>
+            </div>
+
+            <div class="both">
+                <div class="input-group">
+                    <h2>Date of Birth :</h2>
+                    <input type="text" id="datepicker" placeholder="Select Your Birth Date" autocomplete="off" />
+                    <p class="error-message"></p>
+                </div>
+
+                <div class="input-group">
+                    <label for="gender">Gender</label>
+                    <input type="radio" id="male" name="gender" value="male" />
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female" />
+                    <label for="female">Female</label><br />
+                    <p class="error-message"></p>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="Enter Your Email" name="email" autocomplete="off" />
+                <i class="fa-solid fa-check"></i>
+                <p class="error-message"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="mobileno">Mobile No</label>
+                <input type="tel" id="mobileno" placeholder="Enter Your Mobile Number" name="mobileno"
+                    autocomplete="off" />
+                <i class="fa-solid fa-check"></i>
+                <p class="error-message"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter Your Password" name="password" />
+                <i class="fa-solid fa-check"></i>
+                <p class="error-message"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm Your Password"
+                    name="confirm-password" />
+                <i class="fa-solid fa-check"></i>
+                <p class="error-message"></p>
+            </div>
+
+            <div class="input-group address-container">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" placeholder="Enter Your Full Address" rows="3" cols="50"
+                    style="resize: none"></textarea>
+                <i class="fa-solid fa-check"></i>
+                <p class="error-message"></p>
+            </div>
+
+            <div class="tenth_row">
+                <div class="city_state">
+                    <div class="input-group">
+                        <label for="city">City</label>
+                        <select name="city" id="city">
+                            <option value>City</option>
+                            <option value="surat">Surat</option>
+                            <option value="vadodara">Vadodara</option>
+                            <option value="ahemdabad">Ahemdabad</option>
+                            <option value="rajkot">Rajkot</option>
+                        </select>
+
+                        <p class="error-message"></p>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="state">State</label>
+                        <select name="state" id="state">
+                            <option value>State</option>
+                            <option value="gujarat">Gujarat</option>
+                            <option value="maharashtra">Maharashtra</option>
+                            <option value="rajasthan">Rajasthan</option>
+                            <option value="delhi">delhi</option>
+                        </select>
+
+                        <p class="error-message"></p>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="pincode">Pincode</label>
+                    <input type="number" id="pincode" class="pincode" placeholder="Enter Your Pincode" />
+
+                    <p class="error-message"></p>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <button type="button" id="add-education">Add
+                    Education</button>
+
+                <div id="education-section">
+                    <div class="row first-row">
+                        <label>
+                            <select name="education-level">
+                                <option value>Select</option>
+                                <option value="high-school">10th
+                                    Class</option>
+                                <option value="bachelors">12th
+                                    Class</option>
+                                <option value="masters">Bachelors</option>
+                                <option value="doctorate">Masters</option>
+                            </select>
+                            <p class="error-message"></p>
+                        </label>
+
+                        <div id="major">
+                            <label> School</label>
+                            <input type="text" name="major" placeholder="Enter School Name" />
+
+                            <p>ENTER FIELD</p>
+                        </div>
+
+                        <div id="school">
+                            <label> Percentile </label>
+                            <input type="tel" name="school" placeholder="Enter Your Percentile" />
+                            <p>ENTER FIELD</p>
+                        </div>
+
+                        <button class="delete-btn" type="button">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group" id="hobbiee-group">
+                <label for="hobbiee">Hobbiee</label> <br />
+                <input type="checkbox" name="hobbiee[]" id="reading" value="reading" class="hobbiee" />Reading<br />
+                <input type="checkbox" name="hobbiee[]" value="swimming" id="swimming" class="hobbiee" />Swimming<br />
+                <input type="checkbox" name="hobbiee[]" id="others" value="others" class="hobbiee" />Others<br />
+                <input type="text" name="otherHobbiee" id="otherHobbiee" style="display: none"
+                    placeholder="Enter your Hobbiee" />
+                <p class="error-message" id="hobbiee-error">Select
+                    Hobbiee</p>
+            </div>
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+    <script src="form2.js"></script>
+</body>
+
+</html>
